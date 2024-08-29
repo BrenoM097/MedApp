@@ -1,4 +1,4 @@
-import { Prescription } from "../models/Prescription.js";
+import Prescription from "../models/Prescription.js";
 
 const findAllPrescriptions = async () => {
   return await Prescription.find();
@@ -14,7 +14,8 @@ const findPrescription = async (id) => {
 
 const savePrescription = async ({ date, appointmentId, medicine, dosage, instructions }) => {
   try {
-    return await Prescription.save({ date, appointmentId, medicine, dosage, instructions });
+    const prescription = new  Prescription({ date, appointmentId, medicine, dosage, instructions });
+    return await prescription.save();
   } catch (error) {
     throw new Error(error);
   }

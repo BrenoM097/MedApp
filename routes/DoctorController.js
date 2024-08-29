@@ -1,4 +1,5 @@
-import { express } from "express";
+import express from "express";
+import bcrypt from 'bcrypt';
 import DoctorService from "../services/DoctorService.js"
 
 let router = express.Router();
@@ -35,6 +36,7 @@ router.post("/createDoctor", async (req, res) => {
     phone,
   } = req.body;
   try {
+    const hashedPassword = await bcrypt.hash(password, 10);
     const doctor = await DoctorService.saveDoctor({
       name,
       login,

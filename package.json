@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Mini Projeto da disciplica programacao 2",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Breno Melo",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "mongoose": "^8.5.2"
   }

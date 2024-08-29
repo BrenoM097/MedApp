@@ -1,5 +1,5 @@
-import { express } from "express";
-import { PrescriptionService } from "../services/PrescriptionService.js";
+import express from "express";
+import PrescriptionService from "../services/PrescriptionService.js";
 
 let router = express.Router();
 router.get("/doctors", async (req, res) => {
