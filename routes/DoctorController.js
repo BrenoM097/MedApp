@@ -40,7 +40,7 @@ router.post("/createDoctor", async (req, res) => {
     const doctor = await DoctorService.saveDoctor({
       name,
       login,
-      password,
+      hashedPassword,
       medicalSpeciality,
       medicalRegistration,
       email,
